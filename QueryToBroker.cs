@@ -5,6 +5,7 @@ using Tridion.ContentDelivery.Meta;
 [WebMethod]
 public static string GetDynamicComp(string metaID)
 { 
+  string desiredString=string.Empty;
   ComponentFactory cpf = new ComponentFactory();
   Query query = new Query();
   
@@ -41,6 +42,7 @@ public static string GetDynamicComp(string metaID)
   {
   string URL= item.Multimedia.Url;
   string val=item.MetadataFields[“Metadata Field Name”].Value;
+  desiredString=val; //metadata value assigned, multimedia url can be returned as well
   }
-
+return desiredString; 
 }
